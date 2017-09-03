@@ -20,4 +20,5 @@ export default new Router({
       props: true,
     },
   ],
+  mode: 'history',
 });
