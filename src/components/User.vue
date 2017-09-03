@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <loader v-if="user === null" />
     <div class="header">
       <h1 class="header__text" v-if="this.user">
         {{ this.user.name }}
@@ -25,10 +26,12 @@
 
 <script>
 import RepoCard from './RepoCard';
+import Loader from './Loader';
 
 export default {
   name: 'user',
   components: {
+    Loader,
     RepoCard,
   },
   props: ['username'],
