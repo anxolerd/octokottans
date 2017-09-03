@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card__header">
       <div class="card__header__text">
-        {{ repo.full_name }}
+        {{ repo.name }}
       </div>
       <div class="card__header__subtitle">
         {{ repo.description }}
@@ -33,18 +33,23 @@ export default {
   padding: 8px;
 
   text-align: left;
+  width: 300px;
 }
 
 .card__header {
-  line-height: 2em;
+  height: 3em;
+  line-height: 1.5em;
   text-overflow: ellipsis;
 }
 .card__header__text {
   font-weight: bold;
 }
-.card_header__subtitle {
+.card__header__subtitle {
   font-size: 0.9em;
   font-style: italic;
-  height: 1em;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 </style>

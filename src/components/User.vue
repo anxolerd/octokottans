@@ -9,11 +9,13 @@
     </div>
 
     <main class="main">
-      <ul>
-        <li v-for="repo in this.repos">
-          <repo-card v-bind:repo="repo" />
-        </li>
-      </ul>
+      <div class="container">
+        <repo-card
+          :repo="repo"
+          v-for="repo in this.repos"
+          :key="repo.id"
+        />
+      </div>
       <div v-if="hasNext">
         <button role="button" class="button" @click.prevent="onLoadMoreClick">
           <span class="button__text">Load more</span>
@@ -71,3 +73,13 @@ export default {
   },
 };
 </script>
+
+<style>
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+</style>
