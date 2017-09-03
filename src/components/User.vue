@@ -10,7 +10,7 @@
     <main class="main">
       <ul>
         <li v-for="repo in this.repos">
-          {{repo.name}}
+          <repo-card v-bind:repo="repo" />
         </li>
       </ul>
       <div v-if="hasNext">
@@ -24,8 +24,13 @@
 
 
 <script>
+import RepoCard from './RepoCard';
+
 export default {
   name: 'user',
+  components: {
+    RepoCard,
+  },
   props: ['username'],
 
   created() {
